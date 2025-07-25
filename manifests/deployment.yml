@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shooping 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shooping
+  template:
+    metadata:
+      labels:
+        app: shooping 
+    spec:
+      containers:
+        - name: shooping 
+          image: cicdshoppingacr.azurecr.io/shooping
+          ports:
+          - containerPort: 80
